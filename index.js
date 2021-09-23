@@ -1,10 +1,15 @@
 // Requiring express in our server
+var cors = require('cors')
+
+
 const express = require('express');
 const app = express();
 var jsonfile = require('jsonfile');    
 var file = './db.json'
 var filex = require('./db.json')
 app.engine('html', require('ejs').renderFile);
+
+app.use(cors())
 
 const http = require('http');
 const port = process.env.PORT || 3000
