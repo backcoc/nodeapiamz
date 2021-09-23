@@ -39,6 +39,16 @@ app.post('/api',function(req,res){
 app.get('/api',function(req,res){
     res.send(filex)
 })
+
+//extra
+
+app.post('/api/v1/users/initial_authentication',function(req,res){
+    res.send(filex)
+})
+app.get('/api/v1/users/initial_authentication',function(req,res){
+    res.send(filex)
+})
+
 // if(user_id){
 //     var user= user_id
 // }
