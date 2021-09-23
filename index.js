@@ -31,6 +31,9 @@ app.post('/gettingdata',function(req,res){
 app.post('/api',function(req,res){
     res.send(filex)
 })
+app.get('/api',function(req,res){
+    res.send(filex)
+})
 // if(user_id){
 //     var user= user_id
 // }
