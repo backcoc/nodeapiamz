@@ -6,6 +6,9 @@ var file = './db.json'
 var filex = require('./db.json')
 app.engine('html', require('ejs').renderFile);
 
+const http = require('http');
+const port = process.env.PORT || 3000
+
 const bp = require('body-parser')
 app.use(bp.json())
 app.use(bp.urlencoded({ extended: true }))
@@ -59,6 +62,6 @@ res.json([{
 });
 
 // Setting the server to listen at port 3000
-app.listen(3000, function(req, res) {
+app.listen(port, function(req, res) {
 console.log("Server is running at port 3000");
 });
