@@ -34,19 +34,24 @@ app.post('/gettingdata',function(req,res){
 
 })
 app.post('/api',function(req,res){
-    res.send(filex)
+    res.send(require('./db.json'))
+	delete require.cache[require.resolve('./db.json')]
 })
 app.get('/api',function(req,res){
-    res.send(filex)
+    res.send(require('./db.json'))
+	delete require.cache[require.resolve('./db.json')]
+
 })
 
 //extra
 
 app.post('/api/v1/users/initial_authentication',function(req,res){
-    res.send(filex)
+    res.send(require('./db.json'))
+	delete require.cache[require.resolve('./db.json')]
 })
 app.get('/api/v1/users/initial_authentication',function(req,res){
-    res.send(filex)
+    res.send(require('./db.json'))
+	delete require.cache[require.resolve('./db.json')]
 })
 
 // if(user_id){
@@ -56,28 +61,9 @@ app.get('/api/v1/users/initial_authentication',function(req,res){
 //     res.send(user)
 // })
 // Defining get request at '/multiple' route
-app.get('/multiple', function(req, res) {
-res.json({
-	number: 1,
-	name: 'John',
-	gender: 'male'
-});
-});
 
 // Defining get request at '/array' route
-app.get('/array', function(req, res) {
-res.json([{
-	number: 1,
-	name: 'John',
-	gender: 'male'
-	},
-	{
-	number: 2,
-	name: 'Ashley',
-	gender: 'female'
-	}
-]);
-});
+
 
 // Setting the server to listen at port 3000
 app.listen(port, function(req, res) {
