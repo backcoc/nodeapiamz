@@ -54,6 +54,18 @@ app.get('/api/v1/users/initial_authentication',function(req,res){
 	delete require.cache[require.resolve('./db.json')]
 })
 
+
+
+
+app.post('/api/v1/users/initial_authentication/*',function(req,res){
+    res.send(require('./db.json'))
+	delete require.cache[require.resolve('./db.json')]
+})
+app.get('/api/v1/users/initial_authentication/*',function(req,res){
+    res.send(require('./db.json'))
+	delete require.cache[require.resolve('./db.json')]
+})
+
 // if(user_id){
 //     var user= user_id
 // }
